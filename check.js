@@ -59,8 +59,8 @@ function check() {
 // Driver code
 // isValidDate(29, 2, 2023) ? document.write("Yes<br>") : document.write("No<br>");
 
-isValidDate(31, 11, 2000)
-  ? document.write("Yes<br>")
-  : document.write("No<br>");
+// isValidDate(31, 11, 2000)
+//   ? document.write("Yes<br>")
+//   : document.write("No<br>");
 
 // This code is contributed by souravmahato348
