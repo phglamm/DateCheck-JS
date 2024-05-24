@@ -44,15 +44,21 @@ function check() {
   var month = document.getElementById("month").value;
   var year = document.getElementById("year").value;
 
-  if (day < 1 || day > 31 || isNaN(month)) {
+  if (Object.keys(day).length === 0) {
+    alert("Input for Day is empty");
+  } else if (day < 1 || day > 31) {
     alert("Input data for Day is out of range");
   }
 
-  if (month < 1 || month > 12 || isNaN(month)) {
+  if (Object.keys(month).length === 0) {
+    alert("Input for Month is empty");
+  } else if (month < 1 || month > 12) {
     alert("Input data for Month is out of range");
   }
 
-  if (year > MAX_VALID_YR || year < MIN_VALID_YR || isNaN(year)) {
+  if (Object.keys(year).length === 0) {
+    alert("Input for Year is empty");
+  } else if (year > MAX_VALID_YR || year < MIN_VALID_YR) {
     alert("Input data for Year is out of range");
   } else {
     isValidDate(day, month, year)
