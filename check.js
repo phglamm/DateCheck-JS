@@ -44,26 +44,42 @@ function check() {
   var month = document.getElementById("month").value;
   var year = document.getElementById("year").value;
 
-  if (Object.keys(day).length === 0) {
-    alert("Input for Day is empty");
+  breakme: if (
+    Object.keys(day).length === 0 &&
+    Object.keys(month).length === 0 &&
+    Object.keys(year).length === 0
+  ) {
+    document.getElementById("result").innerHTML =
+      "Input For Day/Month/Year is Empty";
+    break breakme;
+  } else if (Object.keys(day).length === 0) {
+    document.getElementById("result").innerHTML = "Input For Day is empty";
+    break breakme;
   } else if (day < 1 || day > 31) {
-    alert("Input data for Day is out of range");
-  }
-
-  if (Object.keys(month).length === 0) {
-    alert("Input for Month is empty");
+    document.getElementById("result").innerHTML =
+      "Input For Day is out of range";
+    break breakme;
+  } else if (Object.keys(month).length === 0) {
+    document.getElementById("result").innerHTML = "Input For Month is empty";
+    break breakme;
   } else if (month < 1 || month > 12) {
-    alert("Input data for Month is out of range");
-  }
-
-  if (Object.keys(year).length === 0) {
-    alert("Input for Year is empty");
+    document.getElementById("result").innerHTML =
+      "Input data For Month is out of range";
+    break breakme;
+  } else if (Object.keys(year).length === 0) {
+    document.getElementById("result").innerHTML = "Input For Year is empty";
+    break breakme;
   } else if (year > MAX_VALID_YR || year < MIN_VALID_YR) {
-    alert("Input data for Year is out of range");
+    document.getElementById("result").innerHTML =
+      "Input For Year is out of range";
+    break breakme;
   } else {
     isValidDate(day, month, year)
-      ? alert(+day + "/" + month + "/" + year + " is a Valid Date")
-      : alert(+day + "/" + month + "/" + year + " is a NOT Valid Date");
+      ? // alert(+day + "/" + month + "/" + year + " is a Valid Date")
+        (document.getElementById("result").innerHTML =
+          +day + "/" + month + "/" + year + " is a Valid Date")
+      : (document.getElementById("result").innerHTML =
+          +day + "/" + month + "/" + year + " is NOT a Valid Date");
   }
 }
 // Driver code

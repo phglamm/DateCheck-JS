@@ -42,3 +42,9 @@ form input {
 /* .key {
   width: 200px;
 } */
+
+p {
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
