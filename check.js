@@ -44,7 +44,23 @@ function check() {
   var month = document.getElementById("month").value;
   var year = document.getElementById("year").value;
 
-  breakme: if (
+  breakme: if (isNaN(day) && isNaN(month) && isNaN(year)) {
+    document.getElementById("result").innerHTML =
+      "Input For Day/Month/Year is a Character";
+    break breakme;
+  } else if (isNaN(day)) {
+    document.getElementById("result").innerHTML =
+      "Input For Day is a Character";
+    break breakme;
+  } else if (isNaN(month)) {
+    document.getElementById("result").innerHTML =
+      "Input For Month is a Character";
+    break breakme;
+  } else if (isNaN(year)) {
+    document.getElementById("result").innerHTML =
+      "Input For Year is a Character";
+    break breakme;
+  } else if (
     Object.keys(day).length === 0 &&
     Object.keys(month).length === 0 &&
     Object.keys(year).length === 0
@@ -75,8 +91,7 @@ function check() {
     break breakme;
   } else {
     isValidDate(day, month, year)
-      ? // alert(+day + "/" + month + "/" + year + " is a Valid Date")
-        (document.getElementById("result").innerHTML =
+      ? (document.getElementById("result").innerHTML =
           +day + "/" + month + "/" + year + " is a Valid Date")
       : (document.getElementById("result").innerHTML =
           +day + "/" + month + "/" + year + " is NOT a Valid Date");
